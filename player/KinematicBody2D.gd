@@ -7,7 +7,6 @@ var velocity = Vector2.ZERO
 func _get_input():
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed('right'):
-		print('right')
 		velocity.x += 1
 	if Input.is_action_pressed('left'):
 		velocity.x -= 1
@@ -21,5 +20,4 @@ func _get_input():
 
 func _physics_process(delta):
 	_get_input()
-	print("moving %s" % velocity)
 	velocity = move_and_slide(velocity)
