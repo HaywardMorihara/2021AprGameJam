@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="2021AprGameJam"
+run/main_scene="res://map/Map.tscn"
 config/icon="res://icon.png"
 
 [input]
