@@ -2,4 +2,4 @@ extends Button
 
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://cutscene/Intro.tscn")
+	get_tree().change_scene("res://cutscene/IntroCutscene.tscn")
