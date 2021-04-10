@@ -9,7 +9,7 @@
 flags = 4
 frame_0/texture = ExtResource( 2 )
 
-[node name="Player" type="Node"]
+[node name="Player" type="Node2D"]
 
 [node name="PlayerBody" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
