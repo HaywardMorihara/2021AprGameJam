@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://player/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/Light.png" type="Texture" id=2]
+[ext_resource path="res://player/Player.gd" type="Script" id=3]
+[ext_resource path="res://watch/Watch.tscn" type="PackedScene" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -10,6 +12,7 @@ flags = 4
 frame_0/texture = ExtResource( 2 )
 
 [node name="Player" type="Node2D"]
+script = ExtResource( 3 )
 
 [node name="PlayerBody" type="KinematicBody2D" parent="."]
 script = ExtResource( 1 )
@@ -25,3 +28,7 @@ smoothing_enabled = true
 scale = Vector2( 15, 15 )
 texture = SubResource( 2 )
 color = Color( 0.537255, 0.537255, 0.537255, 1 )
+
+[node name="PlayerCanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Watch" parent="PlayerCanvasLayer" instance=ExtResource( 4 )]
