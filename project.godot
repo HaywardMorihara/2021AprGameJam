@@ -19,6 +19,10 @@ config/name="2021AprGameJam"
 run/main_scene="res://menu/MainMenu.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://Global.gd"
+
 [input]
 
 up={
