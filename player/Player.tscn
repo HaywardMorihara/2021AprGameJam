@@ -1,8 +1,13 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://player/KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://assets/Light.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
+
+[sub_resource type="AnimatedTexture" id=2]
+flags = 4
+frame_0/texture = ExtResource( 2 )
 
 [node name="Player" type="Node"]
 
@@ -15,3 +20,8 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="PlayerBody"]
 current = true
 smoothing_enabled = true
+
+[node name="Light2D" type="Light2D" parent="PlayerBody"]
+scale = Vector2( 15, 15 )
+texture = SubResource( 2 )
+color = Color( 0.537255, 0.537255, 0.537255, 1 )
