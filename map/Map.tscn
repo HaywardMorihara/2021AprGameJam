@@ -70,7 +70,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 32, 0, 32 )
 } ]
 2/z_index = 0
 
-[sub_resource type="ConvexPolygonShape2D" id=6]
+[sub_resource type="ConvexPolygonShape2D" id=4]
 points = PoolVector2Array( 0, 64, 0, 32, 32, 32, 32, 64 )
 
 [sub_resource type="TileSet" id=5]
@@ -84,14 +84,14 @@ points = PoolVector2Array( 0, 64, 0, 32, 32, 32, 32, 64 )
 0/navigation_offset = Vector2( 0, 0 )
 0/shape_offset = Vector2( 0, 0 )
 0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-0/shape = SubResource( 6 )
+0/shape = SubResource( 4 )
 0/shape_one_way = false
 0/shape_one_way_margin = 1.0
 0/shapes = [ {
 "autotile_coord": Vector2( 0, 0 ),
 "one_way": false,
 "one_way_margin": 1.0,
-"shape": SubResource( 6 ),
+"shape": SubResource( 4 ),
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
@@ -113,13 +113,14 @@ format = 1
 tile_data = PoolIntArray( -524280, 0, 0, -524279, 0, 0, -524278, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -393207, 0, 0, -393206, 0, 0 )
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 8, -40 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.113725, 0.0784314, 0.160784, 1 )
 
-[node name="House1" parent="." instance=ExtResource( 3 )]
+[node name="PlayerHouse" parent="." instance=ExtResource( 3 )]
 position = Vector2( 8, -88 )
-destination_scene = "res://house/InteriorHouse.tscn"
+destination_scene = "res://house/PlayerInteriorHouse.tscn"
 
 [node name="House2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 144, 48 )

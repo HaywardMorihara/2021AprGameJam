@@ -5,7 +5,7 @@
 
 [node name="IntroCutscene" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
-next_scene = "res://house/InteriorHouse.tscn"
+next_scene = "res://house/PlayerInteriorHouse.tscn"
 
 [node name="RichTextLabel" parent="." index="0"]
 text = "This is the intro!"
