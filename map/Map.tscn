@@ -125,3 +125,4 @@ destination_scene = "res://house/PlayerInteriorHouse.tscn"
 [node name="WitchHouse" parent="." instance=ExtResource( 3 )]
 position = Vector2( 144, 48 )
 destination_scene = "res://house/WitchInteriorHouse.tscn"
+is_witch_house = true
