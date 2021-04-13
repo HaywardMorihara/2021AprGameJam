@@ -122,6 +122,6 @@ color = Color( 0.113725, 0.0784314, 0.160784, 1 )
 position = Vector2( 8, -88 )
 destination_scene = "res://house/PlayerInteriorHouse.tscn"
 
-[node name="House2" parent="." instance=ExtResource( 3 )]
+[node name="WitchHouse" parent="." instance=ExtResource( 3 )]
 position = Vector2( 144, 48 )
-destination_scene = "res://house/InteriorHouse.tscn"
+destination_scene = "res://house/WitchInteriorHouse.tscn"
