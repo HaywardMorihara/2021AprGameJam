@@ -31,6 +31,7 @@ color = Color( 0.537255, 0.537255, 0.537255, 1 )
 [node name="PlayerCanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Watch" parent="PlayerCanvasLayer" instance=ExtResource( 4 )]
+visible = false
 
 [node name="StillnessTimer" type="Timer" parent="."]
 one_shot = true
