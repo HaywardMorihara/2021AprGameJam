@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://menu/StartButton.gd" type="Script" id=1]
+[ext_resource path="res://menu/CreditsButton.gd" type="Script" id=2]
 
 [node name="MainMenu" type="Control"]
 anchor_right = 1.0
@@ -14,13 +15,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -288.0
-margin_top = -172.0
-margin_right = 280.0
-margin_bottom = 164.0
+margin_left = -168.0
+margin_top = -68.0
+margin_right = 168.0
+margin_bottom = 76.0
 text = "Start"
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CreditsButton" type="Button" parent="."]
+margin_left = 464.0
+margin_top = 432.0
+margin_right = 568.0
+margin_bottom = 488.0
+text = "Credits"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_StartButton_pressed"]
+[connection signal="pressed" from="CreditsButton" to="CreditsButton" method="_on_CreditsButton_pressed"]
