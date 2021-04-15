@@ -6,6 +6,6 @@ func _ready():
 
 
 func _player_stillness_achieved()->void:
-	var distance = $Player/PlayerBody.global_position.distance_to($DaughterNPC/KinematicBody2D.global_position)
+	var distance = $Player.global_position.distance_to($DaughterNPC/KinematicBody2D.global_position)
 	if distance < 75:
 		get_tree().change_scene("res://cutscene/WinCutscene.tscn")

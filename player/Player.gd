@@ -1,4 +1,4 @@
-extends Node2D
+extends KinematicBody2D
 
 
 signal player_stillness_achieved 
@@ -34,7 +34,7 @@ func _get_input():
 
 func _physics_process(delta):
 	_get_input()
-	velocity = $PlayerBody.move_and_slide(velocity)
+	velocity = move_and_slide(velocity)
 
 
 func _input(event):
