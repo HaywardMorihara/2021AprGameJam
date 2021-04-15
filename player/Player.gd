@@ -31,14 +31,7 @@ func _get_input():
 		
 	# Make sure diagonal movement isn't faster
 	velocity = velocity.normalized() * speed
-
-
-func _physics_process(delta):
-	_get_input()
-	velocity = move_and_slide(velocity)
-
-
-func _process(delta)->void:
+	
 	if velocity.length() == 0:
 		$PlayerAnimation.animation = "still_down"
 	elif abs(velocity.x) >= abs(velocity.y):
@@ -49,6 +42,12 @@ func _process(delta)->void:
 		else:
 			print("moving down")
 			$PlayerAnimation.animation = "moving_down"
+
+
+func _physics_process(delta):
+	_get_input()
+	velocity = move_and_slide(velocity)
+
 
 func _input(event):
 	if Input.is_action_just_pressed("check_watch"):
