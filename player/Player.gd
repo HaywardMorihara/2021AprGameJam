@@ -40,7 +40,6 @@ func _get_input():
 		if velocity.y < 0:
 			pass
 		else:
-			print("moving down")
 			$PlayerAnimation.animation = "moving_down"
 
 
