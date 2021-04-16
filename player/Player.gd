@@ -32,13 +32,18 @@ func _get_input():
 	# Make sure diagonal movement isn't faster
 	velocity = velocity.normalized() * speed
 	
+	# TODO Probably should have this somehwere else...but I think it needs to
+	# be part of _physics_process for optmization
 	if velocity.length() == 0:
 		$PlayerAnimation.animation = "still_down"
 	elif abs(velocity.x) >= abs(velocity.y):
-		pass
+		if velocity.x < 0:
+			$PlayerAnimation.animation = "moving_left"
+		else:
+			$PlayerAnimation.animation = "moving_right"
 	else:
 		if velocity.y < 0:
-			pass
+			$PlayerAnimation.animation = "moving_up"
 		else:
 			$PlayerAnimation.animation = "moving_down"
 
