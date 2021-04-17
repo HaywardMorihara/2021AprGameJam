@@ -113,14 +113,6 @@ cell_size = Vector2( 32, 32 )
 format = 1
 tile_data = PoolIntArray( -524280, 0, 0, -524279, 0, 0, -524278, 0, 0, -458744, 0, 0, -458743, 0, 0, -458742, 0, 0, -393207, 0, 0, -393206, 0, 0 )
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 0, -88 )
-is_light_on = true
-
-[node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
-color = Color( 0.113725, 0.0784314, 0.160784, 1 )
-
 [node name="WitchExteriorHouse" parent="." instance=ExtResource( 3 )]
 position = Vector2( 144, 48 )
 destination_scene = "res://house/WitchInteriorHouse.tscn"
@@ -128,3 +120,11 @@ is_witch_house = true
 
 [node name="PlayerExteriorHouse" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, -136 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 0, -40 )
+is_light_on = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+color = Color( 0.113725, 0.0784314, 0.160784, 1 )
