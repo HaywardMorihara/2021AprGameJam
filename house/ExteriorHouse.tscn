@@ -10,13 +10,14 @@ script = ExtResource( 3 )
 [node name="HouseStaticBody" type="StaticBody2D" parent="."]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HouseStaticBody"]
-scale = Vector2( 2.04534, 2.30851 )
-polygon = PoolVector2Array( -32, -16, 0, -32, 32, -16, 32, 32, 8, 32, 8, 0, -8, 0, -8, 32, -32, 32 )
+position = Vector2( 0.360797, 0 )
+scale = Vector2( 2.0383, 2.30851 )
+polygon = PoolVector2Array( -23.4823, -8.22381, -0.177009, -13.8618, 23.3721, -6.93088, 23.3721, 20.7926, 5.15342, 20.8283, 5.42875, 9.76664, -5.30962, 9.64508, -5.44732, 21.3146, -23.7576, 21.3146 )
 
 [node name="Sprite" type="Sprite" parent="HouseStaticBody"]
-scale = Vector2( 2, 2 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 1 )
 
 [node name="Entrance" parent="." instance=ExtResource( 2 )]
-position = Vector2( 0, 48 )
-scale = Vector2( 0.422852, 1.01345 )
+position = Vector2( 0, 32 )
+scale = Vector2( 0.278592, 0.515998 )
