@@ -12,6 +12,3 @@ z_index = 1
 
 [node name="WitchNPC" parent="." index="2" instance=ExtResource( 2 )]
 position = Vector2( 80, -80 )
-
-[node name="TileMap" parent="." index="3"]
-tile_data = PoolIntArray(  )
