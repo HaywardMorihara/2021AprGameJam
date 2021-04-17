@@ -5,6 +5,7 @@ func _ready():
 	$Player.connect("player_stillness_achieved", self, "_player_stillness_achieved")
 	if Global.player_position_before_cutscene:
 		$Player.global_position = Global.player_position_before_cutscene
+		Global.player_position_before_cutscene = Vector2()
 
 
 func _player_stillness_achieved()->void:
