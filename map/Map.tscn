@@ -118,6 +118,7 @@ position = Vector2( 0, -88 )
 is_light_on = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 color = Color( 0.113725, 0.0784314, 0.160784, 1 )
 
 [node name="WitchExteriorHouse" parent="." instance=ExtResource( 3 )]
