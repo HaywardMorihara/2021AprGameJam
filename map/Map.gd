@@ -9,4 +9,6 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Global.next_exit_map_position:
-		$Player.position = Global.next_exit_map_position
+		$YSort/Player.position = Global.next_exit_map_position
+	# Set map visibility to false so we don't jump to player position...lol this is a baad hack, should probably just fix it
+	visible = true

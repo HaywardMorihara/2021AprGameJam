@@ -15,5 +15,5 @@ __meta__ = {
 shape = SubResource( 1 )
 
 [node name="ExitPosition" type="Position2D" parent="."]
-position = Vector2( 0, 32 )
+position = Vector2( 0, 48 )
 [connection signal="body_entered" from="." to="." method="_on_Location_body_entered"]
