@@ -4,6 +4,7 @@ extends KinematicBody2D
 signal player_stillness_achieved 
 
 export var speed = 200  # speed in pixels/sec
+export var is_light_on := false
 
 var velocity = Vector2.ZERO
 
@@ -13,6 +14,7 @@ func _ready():
 	$StillnessTimer.start()
 	$StillnessTimer.connect("stillness_achieved", self, "_stillness_achieved")
 	$PlayerAnimation.playing = true
+	$Light2D.visible = is_light_on
 
 func _get_input():
 	velocity = Vector2.ZERO
