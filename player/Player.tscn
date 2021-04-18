@@ -1,10 +1,11 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://player/StillnessTimer.gd" type="Script" id=1]
 [ext_resource path="res://assets/Light.png" type="Texture" id=2]
 [ext_resource path="res://player/Player.gd" type="Script" id=3]
 [ext_resource path="res://watch/Watch.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/sprites/gfx/character.png" type="Texture" id=5]
+[ext_resource path="res://assets/sprites/SprintBar.png" type="Texture" id=6]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -145,7 +146,19 @@ color = Color( 0.537255, 0.537255, 0.537255, 1 )
 [node name="PlayerCanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Watch" parent="PlayerCanvasLayer" instance=ExtResource( 4 )]
-visible = false
+
+[node name="SprintBar" type="TextureProgress" parent="PlayerCanvasLayer"]
+margin_left = 8.00003
+margin_top = 8.0
+margin_right = 104.0
+margin_bottom = 48.0
+rect_scale = Vector2( 10.4988, 1.23384 )
+max_value = 1000.0
+value = 100.0
+texture_progress = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="StillnessTimer" type="Timer" parent="."]
 one_shot = true

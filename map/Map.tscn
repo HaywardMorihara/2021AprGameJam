@@ -215,7 +215,6 @@ points = PoolVector2Array( 0.157944, 0, 16, 0.110062, 16, 5.89734, 0, 6.03193 )
 script = ExtResource( 4 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-visible = false
 color = Color( 0.113725, 0.0784314, 0.160784, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -247,4 +246,4 @@ z_index = 2
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 0, -40 )
 z_index = 2
-is_light_on = true
+is_outside = true
