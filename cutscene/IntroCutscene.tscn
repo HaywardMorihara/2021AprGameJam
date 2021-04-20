@@ -8,4 +8,16 @@ script = ExtResource( 2 )
 next_scene = "res://house/PlayerInteriorHouse.tscn"
 
 [node name="RichTextLabel" parent="." index="0"]
-text = "This is the intro!"
+text = "\"5 MINUTES,\" the doctor said. \"I don't think she has more than that.\"
+
+\"Your daughter has been cursed by the WITCH WHO LIVES IN THE WOODS TO THE NORTH!\"
+
+\"The only way to save her is to go there and stop the witch!\"
+
+\"You'll need to hurry!
+
+MOVE with the 'W', 'A', 'S', 'D' keys! 
+
+SPRINT with the 'Space' bar! 
+
+CHECK THE TIME with the 'E' key!"
