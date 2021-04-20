@@ -6,4 +6,10 @@
 next_scene = "res://house/WitchInteriorHouse.tscn"
 
 [node name="RichTextLabel" parent="." index="0"]
-text = "you've healed the witch, now go heal your daughter!"
+text = "\"Ahh!\" the witch exclaims. \"I feel much better! Thank you for spending some time being still with me!\"
+
+\"10 SECONDS. That's all it takes. 10 SECONDS OF STILLNESS will do wonders for you and your daughter.\"
+
+\"I do believe that's all she needs, and I think you should try it on your way home as well - 10 SECONDS OF REST may just help you SEE MORE CLEARLY.\"
+
+\"Good luck!\""

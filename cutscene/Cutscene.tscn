@@ -21,3 +21,10 @@ text = "Place-holder text"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+margin_left = 456.0
+margin_top = 552.0
+margin_right = 568.0
+margin_bottom = 592.0
+text = "Click to continue"

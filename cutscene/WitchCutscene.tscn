@@ -6,4 +6,14 @@
 next_scene = "res://house/WitchInteriorHouse.tscn"
 
 [node name="RichTextLabel" parent="." index="0"]
-text = "You are in the witch's house"
+text = "\"Why hello there, stranger!\" the old witch greets you as you enter her home.
+
+\"You've cursed my daughter and you must reverse it!\" you yell at the witch.
+
+She chuckles to herself, \"I did no such thing. In fact, I do believe that I am suffering from the same ailments as her.\"
+
+\"Please, come closer. Spend some time with an old lady. I am quite lonely here.\"
+
+\"10 SECOND. That's all I ask. STAY STILL NEXT TO ME FOR 10 SECONDS, and I'll tell you how to heal your daughter.\"
+
+\"And it does NOT count if you spend it all CHECKING THE TIME!\""

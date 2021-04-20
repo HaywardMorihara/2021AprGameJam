@@ -6,4 +6,8 @@
 next_scene = "res://menu/MainMenu.tscn"
 
 [node name="RichTextLabel" parent="." index="0"]
-text = "You win!"
+text = "\"I feel much better now, Daddy!\" your daughter exclaims.
+
+\"Thank you for spending time with me!\"
+
+- The End :)"

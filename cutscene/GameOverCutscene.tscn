@@ -6,4 +6,6 @@
 next_scene = "res://menu/MainMenu.tscn"
 
 [node name="RichTextLabel" parent="." index="0"]
-text = "Game over man!"
+text = "GAME OVER
+
+Time is up - you didn't save your daughter in time :("
