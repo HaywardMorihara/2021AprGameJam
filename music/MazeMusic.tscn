@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/music/WaterTemple.ogg" type="AudioStream" id=1]
+
+[node name="MazeMusic" type="AudioStreamPlayer"]
+stream = ExtResource( 1 )

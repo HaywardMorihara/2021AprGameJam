@@ -6,6 +6,9 @@ func _ready():
 	if Global.player_position_before_cutscene:
 		$Player.global_position = Global.player_position_before_cutscene
 		Global.player_position_before_cutscene = Vector2()
+	if not HomeMusic.playing:
+		MazeMusic.stop()
+		HomeMusic.play()
 
 
 func _player_stillness_achieved()->void:

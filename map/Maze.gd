@@ -9,3 +9,6 @@ func _ready():
 	# So we can turn it off for development
 	$CanvasModulate.visible = true
 	Global.previous_scene = ""
+	if not MazeMusic.playing:
+		HomeMusic.stop()
+		MazeMusic.play()

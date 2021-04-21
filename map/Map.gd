@@ -17,3 +17,6 @@ func _ready():
 	# So that we can have it bright while doing work 
 	$CanvasModulate.visible = true
 	Global.previous_scene = ""
+	if not HomeMusic.playing:
+		MazeMusic.stop()
+		HomeMusic.play()

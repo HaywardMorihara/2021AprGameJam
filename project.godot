@@ -23,6 +23,8 @@ config/icon="res://icon.png"
 
 Global="*res://Global.gd"
 GlobalTimer="*res://GlobalTimer.tscn"
+MazeMusic="*res://music/MazeMusic.tscn"
+HomeMusic="*res://music/HomeMusic.tscn"
 
 [display]
 
