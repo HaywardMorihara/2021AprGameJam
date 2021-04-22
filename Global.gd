@@ -13,3 +13,5 @@ func reset():
 	player_position_before_cutscene = Vector2.ZERO
 	has_player_healed_witch = false
 	previous_scene = "res://map/Map.tscn"
+	HomeMusic.stop()
+	MazeMusic.stop()
