@@ -3,9 +3,9 @@ extends Node2D
 
 func _ready():
 	$Player.connect("player_stillness_achieved", self, "_player_stillness_achieved")
-	if not HomeMusic.playing:
-		MazeMusic.stop()
-		HomeMusic.play()
+#	if not HomeMusic.playing:
+#		MazeMusic.stop()
+#		HomeMusic.play()
 
 func _player_stillness_achieved()->void:
 	var distance = $Player.global_position.distance_to($DaughterNPC/KinematicBody2D.global_position)

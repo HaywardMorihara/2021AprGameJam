@@ -18,6 +18,9 @@ func _ready():
 	$PlayerAnimation.playing = true
 	$Light2D.visible = is_outside
 	$PlayerCanvasLayer/SprintBar.visible = is_outside
+	
+	# TODO Put where it actually belongs
+	$PlayerCanvasLayer/DialoguePopup.popup()
 
 func _get_input():
 	velocity = Vector2.ZERO
