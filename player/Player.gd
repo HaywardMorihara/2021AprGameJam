@@ -95,4 +95,4 @@ func _stillness_achieved():
 	if is_outside:
 		$PlayerCanvasLayer/SprintBar.value = 1000
 		$Camera2D.zoom = Vector2(1,1)
-		$Light2D.scale = Vector2(30,30)
+		$Light2D.scale = Vector2(45,45)
