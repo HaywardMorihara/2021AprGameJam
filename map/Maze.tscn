@@ -30,6 +30,7 @@ tile_data = PoolIntArray( -5373955, 2, 3, -5373954, 2, 131075, -5373953, 2, 1310
 
 [node name="WitchExteriorHouse" parent="YSort" instance=ExtResource( 4 )]
 position = Vector2( 760, -896 )
+z_index = 1
 
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( -592, 848 )
