@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://player/StillnessTimer.gd" type="Script" id=1]
 [ext_resource path="res://assets/Light.png" type="Texture" id=2]
@@ -14,6 +14,33 @@
 [sub_resource type="AnimatedTexture" id=2]
 flags = 4
 frame_0/texture = ExtResource( 2 )
+
+[sub_resource type="Animation" id=21]
+resource_name = "ShowDialogue"
+tracks/0/type = "value"
+tracks/0/path = NodePath("DialogueLabel:percent_visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ProceedLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
@@ -194,7 +221,8 @@ margin_left = 24.0
 margin_top = 32.0
 margin_right = 138.0
 margin_bottom = 52.0
-text = "Hello world"
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+text = "NPC:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -204,7 +232,10 @@ margin_left = 24.0
 margin_top = 56.0
 margin_right = 536.0
 margin_bottom = 120.0
-text = "Hello world how are you doing?"
+custom_colors/default_color = Color( 0, 0, 0, 1 )
+visible_characters = 1
+percent_visible = 0.0544315
+text = "Hello world, how are you doing?"
 
 [node name="ProceedLabel" type="RichTextLabel" parent="PlayerCanvasLayer/DialoguePopup"]
 anchor_left = 1.0
@@ -215,7 +246,11 @@ margin_left = -88.0
 margin_top = -40.0
 margin_right = -16.0
 margin_bottom = -24.0
+custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "[Space] >"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerCanvasLayer/DialoguePopup"]
+anims/ShowDialogue = SubResource( 21 )
 
 [node name="StillnessTimer" type="Timer" parent="."]
 wait_time = 10.0
