@@ -19,8 +19,6 @@ func _ready():
 	$Light2D.visible = is_outside
 	$PlayerCanvasLayer/SprintBar.visible = is_outside
 	
-	# TODO Put where it actually belongs
-	$PlayerCanvasLayer/DialoguePopup.popup()
 
 func _get_input():
 	velocity = Vector2.ZERO
@@ -89,7 +87,14 @@ func _input(event):
 	if Input.is_action_just_released("check_watch"):
 		$PlayerCanvasLayer/Watch.visible = false
 		$StillnessTimer.start()
-
+	if Input.is_action_just_pressed("interact"):
+		print($InteractionArea.get_overlapping_bodies())
+		if $InteractionArea.get_overlapping_bodies():
+			for body in $InteractionArea.get_overlapping_bodies():
+				print(body.get_class())
+				if body.get_class() == "res://npc/NPC.gd":
+					print(body)
+					$PlayerCanvasLayer/DialoguePopup.dialogue_popup()
 
 func _stillness_achieved():
 	# TODO We'll probably want to do some other fancy things

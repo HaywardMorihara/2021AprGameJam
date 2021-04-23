@@ -1,15 +1,22 @@
 extends Popup
 
 func _ready()->void:
+	set_process_input(false)
 	$ProceedLabel.visible = false
 
-func popup(bounds: Rect2 = Rect2( 0, 0, 0, 0 ))->void:
-	.popup(bounds)
+
+func dialogue_popup()->void:
+	popup()
 	get_tree().paused = true
 	$AnimationPlayer.play("ShowDialogue")
 
+
 func _input(event)->void:
 	if event is InputEventKey:
-		if event.scancode == KEY_SPACE:
+		if Input.is_action_just_pressed("interact"):
 			get_tree().paused = false
 			hide()
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	set_process_input(true)

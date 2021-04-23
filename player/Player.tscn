@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://player/StillnessTimer.gd" type="Script" id=1]
 [ext_resource path="res://assets/Light.png" type="Texture" id=2]
@@ -155,6 +155,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
+[sub_resource type="CircleShape2D" id=22]
+radius = 24.0
+
 [node name="PlayerBody" type="KinematicBody2D"]
 script = ExtResource( 3 )
 
@@ -247,7 +250,10 @@ margin_top = -40.0
 margin_right = -16.0
 margin_bottom = -24.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
-text = "[Space] >"
+text = "[Enter] >"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerCanvasLayer/DialoguePopup"]
 anims/ShowDialogue = SubResource( 21 )
@@ -261,4 +267,10 @@ script = ExtResource( 1 )
 frames = SubResource( 20 )
 animation = "still_down"
 speed_scale = 2.0
+
+[node name="InteractionArea" type="Area2D" parent="."]
+
+[node name="InteractionShape" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource( 22 )
+[connection signal="animation_finished" from="PlayerCanvasLayer/DialoguePopup/AnimationPlayer" to="PlayerCanvasLayer/DialoguePopup" method="_on_AnimationPlayer_animation_finished"]
 [connection signal="timeout" from="StillnessTimer" to="StillnessTimer" method="_on_StillnessTimer_timeout"]
