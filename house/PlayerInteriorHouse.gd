@@ -6,9 +6,16 @@ func _ready():
 #	if not HomeMusic.playing:
 #		MazeMusic.stop()
 #		HomeMusic.play()
+	get_tree().paused = true
+	$AnimationPlayer.play("MovePlayer")
+
 
 func _player_stillness_achieved()->void:
 	var distance = $Player.global_position.distance_to($DaughterNPC.global_position)
 	if distance < 75:
 		Global.reset()
 		get_tree().change_scene("res://cutscene/WinCutscene.tscn")
+
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	get_tree().paused = false

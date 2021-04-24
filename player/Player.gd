@@ -76,6 +76,15 @@ func _get_input():
 			$PlayerAnimation.animation = "moving_down"
 
 
+func animate_up():
+	$PlayerAnimation.animation = "moving_up"
+	$PlayerAnimation.play()
+
+func animate_stop():
+	$PlayerAnimation.animation = "still_down"
+	$PlayerAnimation.stop()
+	
+
 func _physics_process(delta):
 	_get_input()
 	velocity = move_and_slide(velocity)
@@ -96,6 +105,7 @@ func _input(event):
 				if area.has_method("determine_dialogue") and area.has_method("determine_speaker"):
 					$PlayerCanvasLayer/DialoguePopup.dialogue_popup(area.determine_speaker(), area.determine_dialogue())
 					is_in_dialogue = true
+
 
 func _stillness_achieved():
 	# TODO We'll probably want to do some other fancy things
