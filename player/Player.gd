@@ -10,6 +10,7 @@ export var is_outside : bool
 var velocity = Vector2.ZERO
 
 var require_sprint_release := false
+var is_in_dialogue := false
 
 func _ready():
 	$PlayerCanvasLayer/Watch.visible = false
@@ -88,13 +89,13 @@ func _input(event):
 		$PlayerCanvasLayer/Watch.visible = false
 		$StillnessTimer.start()
 	if Input.is_action_just_pressed("interact"):
-		print($InteractionArea.get_overlapping_bodies())
-		if $InteractionArea.get_overlapping_bodies():
-			for body in $InteractionArea.get_overlapping_bodies():
-				print(body.get_class())
-				if body.get_class() == "res://npc/NPC.gd":
-					print(body)
-					$PlayerCanvasLayer/DialoguePopup.dialogue_popup()
+		if is_in_dialogue:
+			is_in_dialogue = false
+		elif not is_in_dialogue and $InteractionArea.get_overlapping_areas():
+			for area in $InteractionArea.get_overlapping_areas():
+				if area.has_method("determine_dialogue") and area.has_method("determine_speaker"):
+					$PlayerCanvasLayer/DialoguePopup.dialogue_popup(area.determine_speaker(), area.determine_dialogue())
+					is_in_dialogue = true
 
 func _stillness_achieved():
 	# TODO We'll probably want to do some other fancy things

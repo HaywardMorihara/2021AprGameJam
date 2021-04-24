@@ -8,7 +8,7 @@ func _ready():
 #		HomeMusic.play()
 
 func _player_stillness_achieved()->void:
-	var distance = $Player.global_position.distance_to($DaughterNPC/KinematicBody2D.global_position)
+	var distance = $Player.global_position.distance_to($DaughterNPC.global_position)
 	if distance < 75:
 		Global.reset()
 		get_tree().change_scene("res://cutscene/WinCutscene.tscn")
