@@ -11,6 +11,7 @@ var velocity = Vector2.ZERO
 
 var require_sprint_release := false
 var is_in_dialogue := false
+var is_in_animation := false
 
 func _ready():
 	$PlayerCanvasLayer/Watch.visible = false
@@ -62,28 +63,39 @@ func _get_input():
 	
 	# TODO Probably should have this somehwere else...but I think it needs to
 	# be part of _physics_process for optmization
-	if velocity.length() == 0:
-		$PlayerAnimation.animation = "still_down"
-	elif abs(velocity.x) >= abs(velocity.y):
-		if velocity.x < 0:
-			$PlayerAnimation.animation = "moving_left"
+	if not is_in_animation:
+		if velocity.length() == 0:
+			$PlayerAnimation.animation = "still_down"
+		elif abs(velocity.x) >= abs(velocity.y):
+			if velocity.x < 0:
+				$PlayerAnimation.animation = "moving_left"
+			else:
+				$PlayerAnimation.animation = "moving_right"
 		else:
-			$PlayerAnimation.animation = "moving_right"
-	else:
-		if velocity.y < 0:
-			$PlayerAnimation.animation = "moving_up"
-		else:
-			$PlayerAnimation.animation = "moving_down"
+			if velocity.y < 0:
+				$PlayerAnimation.animation = "moving_up"
+			else:
+				$PlayerAnimation.animation = "moving_down"
 
 
 func animate_up():
+	is_in_animation = true
 	$PlayerAnimation.animation = "moving_up"
+	$PlayerAnimation.playing = true
 	$PlayerAnimation.play()
+
 
 func animate_stop():
 	$PlayerAnimation.animation = "still_down"
 	$PlayerAnimation.stop()
+	is_in_animation = false
 	
+
+func animation_dialogue(speaker : String, dialogue : String):
+	$PlayerCanvasLayer/DialoguePopup.dialogue_popup(speaker, dialogue)
+	
+func animation_dialogue_stop():
+	$PlayerCanvasLayer/DialoguePopup.dialogue_stop()	
 
 func _physics_process(delta):
 	_get_input()

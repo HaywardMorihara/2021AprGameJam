@@ -47,6 +47,7 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "MovePlayer"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Player:position")
 tracks/0/interp = 1
@@ -54,7 +55,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 2, 3 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 80 ), Vector2( 0, 0 ) ]
@@ -66,9 +67,15 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1.5, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "values": [ {
+"args": [ "Daughter", "Daddy!" ],
+"method": "animation_dialogue"
+}, {
+"args": [  ],
+"method": "animation_dialogue_stop"
+}, {
 "args": [  ],
 "method": "animate_up"
 }, {
