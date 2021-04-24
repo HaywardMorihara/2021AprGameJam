@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://house/PlayerInteriorHouse.gd" type="Script" id=1]
 [ext_resource path="res://npc/DaughterNPC.tscn" type="PackedScene" id=2]
@@ -45,6 +45,9 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 } ]
 1/z_index = 0
 
+[sub_resource type="Animation" id=3]
+resource_name = "MovePlayer"
+
 [node name="PlayerHouse" instance=ExtResource( 3 )]
 script = ExtResource( 1 )
 
@@ -57,3 +60,6 @@ tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( -327686, 1, 0 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
+anims/MovePlayer = SubResource( 3 )
