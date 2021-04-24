@@ -3,4 +3,5 @@
 [ext_resource path="res://assets/music/WaterTemple.ogg" type="AudioStream" id=1]
 
 [node name="MazeMusic" type="AudioStreamPlayer"]
+pause_mode = 1
 stream = ExtResource( 1 )

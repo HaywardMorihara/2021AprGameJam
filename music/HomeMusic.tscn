@@ -3,4 +3,5 @@
 [ext_resource path="res://assets/music/ItsGettingFreezingCold.ogg" type="AudioStream" id=1]
 
 [node name="HomeMusic" type="AudioStreamPlayer"]
+pause_mode = 2
 stream = ExtResource( 1 )
