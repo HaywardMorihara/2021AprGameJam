@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://tutorial/KeyTutorial.tres" type="SpriteFrames" id=1]
+
+[node name="KeyTutorial" type="Control"]
+margin_left = 448.0
+margin_top = 128.0
+margin_right = 584.0
+margin_bottom = 256.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Key" type="AnimatedSprite" parent="."]
+position = Vector2( 64, 64 )
+frames = ExtResource( 1 )
+animation = "E"
+playing = true
+
+[node name="Action" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -60.0
+margin_top = -40.0
+margin_right = 52.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
