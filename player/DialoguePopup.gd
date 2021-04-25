@@ -1,12 +1,12 @@
 extends Popup
 
 var speaker : String
-var dialogues := PoolStringArray()
+var dialogues := Array()
 
 func _ready()->void:
 	_reset()
 
-func dialogue_popup(speaker_param : String, dialogues_param : PoolStringArray)->void:
+func dialogue_popup(speaker_param : String, dialogues_param : Array)->void:
 	speaker = speaker_param
 	dialogues = dialogues_param
 	dialogue_next()
@@ -14,7 +14,7 @@ func dialogue_popup(speaker_param : String, dialogues_param : PoolStringArray)->
 func dialogue_next():
 	_reset()
 	$SpeakerLabel.text = "%s:" % speaker
-	$DialogueLabel.text = dialogues.pop()
+	$DialogueLabel.text = dialogues.pop_front()
 	popup()
 	get_tree().paused = true
 	$AnimationPlayer.play("ShowDialogue")
@@ -32,7 +32,10 @@ func _reset()->void:
 
 func _input(event)->void:
 	if Input.is_action_just_pressed("interact"):
-		dialogue_stop()
+		if dialogues.size() > 0:
+			dialogue_next()
+		else:
+			dialogue_stop()
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	set_process_input(true)
