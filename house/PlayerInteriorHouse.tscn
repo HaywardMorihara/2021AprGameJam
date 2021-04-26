@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://house/PlayerInteriorHouse.gd" type="Script" id=1]
 [ext_resource path="res://npc/DaughterNPC.tscn" type="PackedScene" id=2]
 [ext_resource path="res://house/InteriorHouse.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sprites/gfx/Inner.png" type="Texture" id=4]
 [ext_resource path="res://assets/sprites/gfx/gfx_upsidedown_speachbubble.png" type="Texture" id=5]
+[ext_resource path="res://npc/DoctorNPC.tscn" type="PackedScene" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
@@ -118,4 +119,7 @@ margin_right = 80.0
 margin_bottom = 40.0
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "DADDY!!"
+
+[node name="DoctorNPC" parent="." index="10" instance=ExtResource( 6 )]
+position = Vector2( -88, -48 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
