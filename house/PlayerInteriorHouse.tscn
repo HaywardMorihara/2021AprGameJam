@@ -49,27 +49,15 @@ points = PoolVector2Array( 0, 0, 32, 0, 32, 48, 0, 48 )
 
 [sub_resource type="Animation" id=3]
 resource_name = "MovePlayer"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("DaddyExclamation/SpeechBubble:visible")
+tracks/0/path = NodePath("DaddyExclamation:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
-tracks/0/enabled = false
+tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.7, 2 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ true, false ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("DaddyExclamation:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.7, 2 ),
+"times": PoolRealArray( 0.5, 1.6 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ true, false ]
@@ -121,5 +109,5 @@ custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "DADDY!!"
 
 [node name="DoctorNPC" parent="." index="10" instance=ExtResource( 6 )]
-position = Vector2( -88, -48 )
+position = Vector2( -88, -40 )
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
