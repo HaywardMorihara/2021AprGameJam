@@ -21,3 +21,5 @@ func _player_stillness_achieved()->void:
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	get_tree().paused = false
+	if not Global.has_move_tutorial_played:
+		$Player.teach(["move", "talk"])

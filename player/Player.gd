@@ -98,6 +98,9 @@ func animation_dialogue(speaker : String, dialogue : String):
 func animation_dialogue_stop():
 	$PlayerCanvasLayer/DialoguePopup.dialogue_stop()	
 
+func teach(actions : Array):
+	$PlayerCanvasLayer/Tutorials.teach(actions)
+
 func _physics_process(delta):
 	_get_input()
 	velocity = move_and_slide(velocity)
