@@ -3,9 +3,9 @@ extends Node2D
 
 func _ready():
 	$Player.connect("player_stillness_achieved", self, "_player_stillness_achieved")
-#	if not HomeMusic.playing:
-#		MazeMusic.stop()
-#		HomeMusic.play()
+	if not HomeMusic.playing:
+		MazeMusic.stop()
+		HomeMusic.play()
 	if not Global.has_intro_animation_played:
 		Global.has_intro_animation_played = true
 		get_tree().paused = true
