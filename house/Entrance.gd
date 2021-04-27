@@ -10,9 +10,10 @@ func _on_Location_body_entered(body):
 	if body.name == "Player":
 		Global.previous_scene = get_tree().current_scene.filename
 		Global.next_exit_map_position = $ExitPosition.global_position
-		if is_witch_entrance and not Global.has_player_entered_witch_house:
-			Global.has_player_entered_witch_house = true
-			get_tree().change_scene("res://cutscene/WitchCutscene.tscn")
-		else:
-			get_tree().change_scene(destination_scene)
+		# I don't think this is necessary because not doing cutscenes like this anymore
+#		if is_witch_entrance and not Global.has_player_entered_witch_house:
+#			Global.has_player_entered_witch_house = true
+#			get_tree().change_scene("res://cutscene/WitchCutscene.tscn")
+#		else:
+		get_tree().change_scene(destination_scene)
 		

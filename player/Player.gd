@@ -94,7 +94,7 @@ func animate_stop():
 	is_in_animation = false
 	
 
-func animation_dialogue(speaker : String, dialogue : String):
+func animation_dialogue(speaker : String, dialogue : Array):
 	$PlayerCanvasLayer/DialoguePopup.dialogue_popup(speaker, dialogue)
 	
 func animation_dialogue_stop():
