@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://npc/NPC.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/sprites/gfx/gfx_doctor.png" type="Texture" id=2]
 [ext_resource path="res://npc/DoctorDialogueArea.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
 
 [node name="DoctorNPC" instance=ExtResource( 1 )]
 
@@ -11,5 +13,8 @@ texture = ExtResource( 2 )
 vframes = 8
 hframes = 17
 frame = 17
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
 
 [node name="DoctorDialogueArea" parent="." index="2" instance=ExtResource( 3 )]
