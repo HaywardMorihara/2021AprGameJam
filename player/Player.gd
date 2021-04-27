@@ -13,6 +13,8 @@ var require_sprint_release := false
 var is_in_dialogue := false
 var is_in_animation := false
 
+var tutorials_queued := []
+
 func _ready():
 	$PlayerCanvasLayer/Watch.visible = false
 	$StillnessTimer.start()
@@ -108,6 +110,8 @@ func _physics_process(delta):
 
 func _input(event):
 	if Input.is_action_just_pressed("check_watch"):
+		if GlobalTimer.is_stopped():
+			GlobalTimer.start()
 		$PlayerCanvasLayer/Watch.visible = true
 		$StillnessTimer.stop()
 	if Input.is_action_just_released("check_watch"):
@@ -121,6 +125,11 @@ func _input(event):
 				if area.has_method("determine_dialogue") and area.has_method("determine_speaker"):
 					$PlayerCanvasLayer/DialoguePopup.dialogue_popup(area.determine_speaker(), area.determine_dialogue())
 					is_in_dialogue = true
+					# TODO I REALLY don't like this but you gotta do what you gotta do
+					if area.name == "DoctorDialogueArea" and not Global.has_watch_tutorial_played:
+						tutorials_queued.append("watch")
+						if GlobalTimer.is_stopped():
+							GlobalTimer.start()
 
 
 func _stillness_achieved():
@@ -131,3 +140,8 @@ func _stillness_achieved():
 		$PlayerCanvasLayer/SprintBar.value = 1000
 		$Camera2D.zoom = Vector2(1,1)
 		$Light2D.scale = Vector2(45,45)
+
+
+func _on_DialoguePopup_dialogue_complete():
+	if tutorials_queued:
+		$PlayerCanvasLayer/Tutorials.teach([tutorials_queued.pop_front()])

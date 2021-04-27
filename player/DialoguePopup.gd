@@ -1,5 +1,7 @@
 extends Popup
 
+signal dialogue_complete
+
 var speaker : String
 var dialogues := Array()
 
@@ -24,6 +26,7 @@ func dialogue_stop()->void:
 	get_tree().paused = false 
 	$ProceedLabel.visible = false
 	$DialogueLabel.percent_visible = 0
+	emit_signal("dialogue_complete")
 
 func _reset()->void:
 	set_process_input(false)

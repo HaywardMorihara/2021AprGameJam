@@ -1,11 +1,6 @@
 extends Node2D
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Global.next_exit_map_position:
@@ -20,3 +15,7 @@ func _ready():
 	if not HomeMusic.playing:
 		MazeMusic.stop()
 		HomeMusic.play()
+	if GlobalTimer.is_stopped():
+		GlobalTimer.start()
+	if not Global.has_print_tutorial_played:
+		$YSort/Player.teach(["sprint"])

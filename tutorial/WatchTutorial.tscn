@@ -4,9 +4,5 @@
 
 [node name="WatchTutorial" instance=ExtResource( 1 )]
 
-[node name="Key" parent="." index="0"]
-frame = 1
-
 [node name="Action" parent="." index="1"]
-text = "Check the Time
-"
+text = "Check Time Left"
