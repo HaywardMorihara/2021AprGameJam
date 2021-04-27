@@ -10,4 +10,4 @@ func determine_dialogue()->Array:
 			"It doesn't count if you're scurrying around or checking the time!"]
 	else:
 		return ["Go heal your daughter! Just spend 10 SECONDS with her! That's all it takes! 10 SECONDS OF STILLNESS",
-		"You should try it yourself! STAY STILL FOR 10 SECONDS - you may find that you're able to see more clearly!"]
+		"You should try it yourself! STAY STILL FOR 10 SECONDS - you may find that you're able to SEE MORE CLEARLY in those woods!"]
