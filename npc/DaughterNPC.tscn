@@ -12,4 +12,3 @@ vframes = 4
 hframes = 4
 
 [node name="DialogueArea" parent="." index="2" instance=ExtResource( 3 )]
-speaker = "Daughter"
