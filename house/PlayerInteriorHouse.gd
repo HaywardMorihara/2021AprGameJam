@@ -7,7 +7,6 @@ func _ready():
 		MazeMusic.stop()
 		HomeMusic.play()
 	if not Global.has_intro_animation_played:
-		Global.has_intro_animation_played = true
 		get_tree().paused = true
 		$AnimationPlayer.play("MovePlayer")
 
@@ -20,6 +19,7 @@ func _player_stillness_achieved()->void:
 
 
 func _on_AnimationPlayer_animation_finished(anim_name):
+	Global.has_intro_animation_played = true
 	get_tree().paused = false
 	if not Global.has_move_and_talk_tutorial_played:
 		$Player.teach(["move", "talk"])
