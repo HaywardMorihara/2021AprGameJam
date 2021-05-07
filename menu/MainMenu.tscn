@@ -139,5 +139,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_StartButton_pressed"]
 [connection signal="pressed" from="CreditsButton" to="CreditsButton" method="_on_CreditsButton_pressed"]

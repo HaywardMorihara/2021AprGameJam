@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/WaterTemple.mp3-24e5a9869ba4dfeaf0ec16b237ce0fc8.mp3str"
+
+[deps]
+
+source_file="res://assets/music/WaterTemple.mp3"
+dest_files=[ "res://.import/WaterTemple.mp3-24e5a9869ba4dfeaf0ec16b237ce0fc8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

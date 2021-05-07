@@ -25,3 +25,4 @@ func reset():
 	has_print_tutorial_played = false
 	HomeMusic.stop()
 	MazeMusic.stop()
+	GlobalTimer.stop()
