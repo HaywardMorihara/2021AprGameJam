@@ -118,6 +118,7 @@ func _input(event):
 		$PlayerCanvasLayer/Watch.visible = false
 		$StillnessTimer.start()
 	if Input.is_action_just_pressed("interact"):
+		$StillnessTimer.start()
 		if is_in_dialogue:
 			is_in_dialogue = false
 		elif not is_in_dialogue and $InteractionArea.get_overlapping_areas():
