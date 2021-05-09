@@ -17,5 +17,7 @@ func _ready():
 		HomeMusic.play()
 	if GlobalTimer.is_stopped():
 		GlobalTimer.start()
-	if not Global.has_print_tutorial_played:
+	if not Global.has_watch_tutorial_played:
+		$YSort/Player.teach(["watch"])
+	if not Global.has_sprint_tutorial_played:
 		$YSort/Player.teach(["sprint"])

@@ -9,9 +9,10 @@ var previous_scene := "res://map/Map.tscn"
 var has_intro_animation_played := false
 
 # Tutorials
-var has_move_and_talk_tutorial_played := false
+var has_move_tutorial_played := false
+var has_talk_tutorial_played := false
 var has_watch_tutorial_played := false
-var has_print_tutorial_played := false
+var has_sprint_tutorial_played := false
 
 func reset():
 	next_exit_map_position = Vector2.ZERO
@@ -20,9 +21,10 @@ func reset():
 	has_player_healed_witch = false
 	previous_scene = "res://map/Map.tscn"
 	has_intro_animation_played = false
-	has_move_and_talk_tutorial_played = false
+	has_move_tutorial_played = false
+	has_talk_tutorial_played = false
 	has_watch_tutorial_played = false
-	has_print_tutorial_played = false
+	has_sprint_tutorial_played = false
 	HomeMusic.stop()
 	MazeMusic.stop()
 	GlobalTimer.stop()

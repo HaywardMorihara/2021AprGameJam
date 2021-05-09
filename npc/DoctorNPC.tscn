@@ -10,8 +10,8 @@
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
-vframes = 8
 hframes = 17
+vframes = 8
 frame = 17
 
 [node name="CollisionShape2D" parent="." index="1"]

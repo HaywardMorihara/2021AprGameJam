@@ -8,7 +8,7 @@
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 2 )
-vframes = 4
 hframes = 4
+vframes = 4
 
 [node name="DialogueArea" parent="." index="2" instance=ExtResource( 3 )]

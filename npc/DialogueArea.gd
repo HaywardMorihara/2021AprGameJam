@@ -8,3 +8,6 @@ func determine_speaker()->String:
 	
 func determine_dialogue()->Array:
 	return ["I NEED TO BE IMPLEMENTED"]
+
+func teach(actions : Array)->void:
+	$Tutorials.teach(actions)

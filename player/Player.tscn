@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://player/StillnessTimer.gd" type="Script" id=1]
 [ext_resource path="res://assets/Light.png" type="Texture" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://assets/sprites/SprintBar.png" type="Texture" id=6]
 [ext_resource path="res://assets/sprites/gfx/gfx_dialogue_box.png" type="Texture" id=7]
 [ext_resource path="res://player/DialoguePopup.gd" type="Script" id=8]
-[ext_resource path="res://player/Tutorials.gd" type="Script" id=9]
+[ext_resource path="res://tutorial/Tutorials.tscn" type="PackedScene" id=9]
+[ext_resource path="res://player/InteractionArea.gd" type="Script" id=10]
 
 [sub_resource type="CircleShape2D" id=1]
 
@@ -61,19 +62,19 @@ region = Rect2( 48, 96, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 64, 16, 32 )
+region = Rect2( 0, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=9]
 atlas = ExtResource( 5 )
-region = Rect2( 16, 64, 16, 32 )
+region = Rect2( 16, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 5 )
-region = Rect2( 32, 64, 16, 32 )
+region = Rect2( 32, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 5 )
-region = Rect2( 48, 64, 16, 32 )
+region = Rect2( 48, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 5 )
@@ -81,19 +82,19 @@ region = Rect2( 0, 0, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 5 )
-region = Rect2( 16, 0, 16, 32 )
+region = Rect2( 0, 64, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=14]
 atlas = ExtResource( 5 )
-region = Rect2( 32, 0, 16, 32 )
+region = Rect2( 16, 64, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=15]
 atlas = ExtResource( 5 )
-region = Rect2( 48, 0, 16, 32 )
+region = Rect2( 32, 64, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=16]
 atlas = ExtResource( 5 )
-region = Rect2( 0, 0, 16, 32 )
+region = Rect2( 48, 64, 16, 32 )
 
 [sub_resource type="AtlasTexture" id=17]
 atlas = ExtResource( 5 )
@@ -120,17 +121,17 @@ animations = [ {
 }, {
 "frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
-"name": "moving_up",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
-"loop": true,
 "name": "moving_down",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 16 ) ],
+"frames": [ SubResource( 12 ) ],
 "loop": true,
 "name": "still_down",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "moving_up",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
@@ -241,17 +242,7 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PlayerCanvasLayer/DialoguePopup"]
 anims/ShowDialogue = SubResource( 3 )
 
-[node name="Tutorials" type="Control" parent="PlayerCanvasLayer"]
-margin_top = -32.0
-margin_right = 8.0
-margin_bottom = -24.0
-script = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="PlayerCanvasLayer/Tutorials"]
-wait_time = 5.0
+[node name="Tutorials" parent="PlayerCanvasLayer" instance=ExtResource( 9 )]
 
 [node name="StillnessTimer" type="Timer" parent="."]
 wait_time = 10.0
@@ -265,11 +256,13 @@ animation = "still_down"
 speed_scale = 2.0
 
 [node name="InteractionArea" type="Area2D" parent="."]
+script = ExtResource( 10 )
 
 [node name="InteractionShape" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource( 22 )
 
 [connection signal="dialogue_complete" from="PlayerCanvasLayer/DialoguePopup" to="." method="_on_DialoguePopup_dialogue_complete"]
 [connection signal="animation_finished" from="PlayerCanvasLayer/DialoguePopup/AnimationPlayer" to="PlayerCanvasLayer/DialoguePopup" method="_on_AnimationPlayer_animation_finished"]
-[connection signal="timeout" from="PlayerCanvasLayer/Tutorials/Timer" to="PlayerCanvasLayer/Tutorials" method="_on_Timer_timeout"]
 [connection signal="timeout" from="StillnessTimer" to="StillnessTimer" method="_on_StillnessTimer_timeout"]
+[connection signal="area_entered" from="InteractionArea" to="InteractionArea" method="_on_InteractionArea_area_entered"]
+[connection signal="area_shape_entered" from="InteractionArea" to="InteractionArea" method="_on_InteractionArea_area_shape_entered"]

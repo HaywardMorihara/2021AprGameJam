@@ -12,3 +12,7 @@ func _ready():
 	if not MazeMusic.playing:
 		HomeMusic.stop()
 		MazeMusic.play()
+	if not Global.has_watch_tutorial_played:
+		$YSort/Player.teach(["watch"])
+	if not Global.has_sprint_tutorial_played:
+		$YSort/Player.teach(["sprint"])
