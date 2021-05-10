@@ -6,6 +6,7 @@
 
 [node name="Key" parent="." index="0"]
 animation = "Enter"
+frame = 0
 
 [node name="Action" parent="." index="1"]
 margin_left = -36.0
